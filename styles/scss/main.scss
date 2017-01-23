@@ -1,0 +1,80 @@
+@import '_form.scss';
+@import '_results.scss';
+$bgColor: #1c1c25;
+$lightBlue: #2196f3; //general styles
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background: $bgColor;
+    margin-bottom: 9.25rem;
+}
+
+input.form-control {
+    border: 2px solid $lightBlue;
+}
+
+header {
+    background-color: #2196f3;
+    margin-top: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 9.25rem;
+    margin-top: 20px;
+    background-color: #2196f3;
+
+    &:hover::before {
+        content: '';
+        position: absolute;
+        background-color: #1976d2;
+        left: 0;
+        height: 9.25rem;
+        animation: animateFoot;
+        animation-duration: 0.8s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes animateFoot {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+}
+//classes
+
+.hidden-js {
+    display: none;
+}
+
+.my-container {
+    margin: 2em 0;
+    padding: 1em 0;
+    color: white;
+    border: 2px solid #1976d2;
+    background: inherit;
+}
+
+.email {
+    font-size: 2.8rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+    &:hover {
+        text-decoration: none;
+        color: white;
+    }
+}
