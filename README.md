@@ -9,7 +9,7 @@ Key features:
 * It checks questions  if they end with "?" and if not it adds question mark at the end;
 * When btn Save Category is clicked, it will show the test in minified and normal JSON format;
 
-** What's next
+**What's next
 
 * Add HTML validation and  client side JavaScript validation;
 * Option to check  questions before ending the test;
