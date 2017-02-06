@@ -1,8 +1,8 @@
 @import '_form.scss';
 @import '_results.scss';
 $bgColor: #1c1c25;
-$lightBlue: #2196f3; //general styles
-
+$lightBlue: #2196f3;
+//general styles
 html {
     position: relative;
     min-height: 100%;
@@ -53,7 +53,7 @@ footer {
 }
 //classes
 
-.hidden-js {
+.js-hidden {
     display: none;
 }
 

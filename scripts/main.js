@@ -1,118 +1,123 @@
-let Question = (function() {
-    class Question {
-        constructor(question, answers) {
-            this._question = question;
-            this._answers = answers;
-        }
-    }
-    return Question;
-}());
-
-let categoryData = (function() {
+(function() {
     'use strict';
-    //caching variables
-    const formAnswers = document.querySelectorAll('.form__answer'),
-        saveCategory = document.querySelector('.btn__save'),
-        saveQuestion = document.querySelector('.btn__add-question'),
-        categoryDom = document.querySelector('.form__category-js'),
-        questionDom = document.querySelector('.form__question-js');
-
-    let answers = [],
-        questions = [],
-        questionsCount = document.querySelector('.questions-count');
-    //event listeners
-    saveQuestion.addEventListener('click', saveQuestionData, false);
-    saveCategory.addEventListener('click', saveCategoryData, false);
-
-    //functions
-    function saveQuestionData(e) {
-        const getAnswers = document.querySelectorAll('.form__answers');
-
-        //Check first HTML validation
-        const checkHtmlValidation = [...formAnswers]
-            .every((x) => x.checkValidity() === true);
-
-        if (questionDom.checkValidity() === false || checkHtmlValidation === false) {
-            return false;
+    //Class  Question
+    const Question = (function() {
+        class Question {
+            constructor(question, answers) {
+                this.question = question;
+                this.answers = answers;
+            }
         }
-
-        const questionData = () => {
-            let getQeustionData = questionDom.value
-                .trim(),
-                validQuestion = inputValidation(getQeustionData),
-                lastLetterQuestion = validQuestion.slice(-1);
+        return Question;
+    }());
+    let form = {
+        config: function() {
+            this.answersContainerElement = document.getElementById('answers-container');
+            this.answersInputElement = this.answersContainerElement.querySelectorAll('.form__answer');
+            this.formElement = document.getElementById('questions-form');
+            this.saveCategoryBtnElement = this.formElement.querySelector('.btn__save');
+            this.saveQuestionBtnElement = this.formElement.querySelector('.btn__add-question');
+            this.categoryInputElement = this.formElement.querySelector('.js-form__category');
+            this.questionInputElement = this.formElement.querySelector('.js-form__question');
+            this.questionsCountElement = document.querySelector('.questions-count');
+            this.getAnswers = document.querySelectorAll('.form__answers');
+            this.answers = [];
+            this.questions = [];
+        },
+        init: function() {
+            this.config();
+            this.bindEvents();
+        },
+        bindEvents: function() {
+            this.saveQuestionBtnElement.addEventListener('click', this.saveQuestionData.bind(this));
+            this.saveCategoryBtnElement.addEventListener('click', this.saveCategoryData.bind(this));
+        },
+        inputValidation: function(element) {
+            let answerVal = element;
+            let firstLetter = answerVal.charAt(0);
+            // if for some reason HTML validation not working,
+            // check answer inputs if they are empty string.
+            if (answerVal === '') {
+                alert('Empty answer field');
+            }
+            // check if  first letter is lower and make it Capital if its true;
+            if (firstLetter.toLowerCase() === firstLetter) {
+                answerVal = firstLetter.toUpperCase() + answerVal.substring(1);
+            }
+            return answerVal;
+        },
+        checkBoxValidation: function(element) {
+            let valid = false;
+            if (element.checked) {
+                valid = true;
+            }
+            return valid;
+        },
+        questionData: function() {
+            const getQeustionData = this.questionInputElement.value
+                .trim();
+            let validQuestion = this.inputValidation(getQeustionData);
+            const lastChar = validQuestion.length - 1;
+            const lastLetterQuestion = validQuestion.charAt(lastChar);
             //check if first Letter is small, and change it to capital
 
             if (lastLetterQuestion !== '?') {
                 validQuestion += ' ?';
             }
             return validQuestion;
-        }
-        const getAnswersValue = [...getAnswers]
-            .reduce((answers, el) => {
-                let getAnswer = el.querySelector('.form__answer'),
-                    answerVal = getAnswer.value
-                    .trim(),
-                    checkVal = el.querySelector('.form__checkbox-js'),
-                    validCheck = checkBoxValidation(checkVal),
-                    answerReady = inputValidation(answerVal),
-                    answer = {
+        },
+        getAnswersValue: function() {
+            let getAnswers = [...this.getAnswers]
+                .reduce((answers, el) => {
+                    const checboxElement = el.querySelector('.form__checkbox-js');
+                    const answerElement = el.querySelector('.form__answer');
+                    const answerVal = answerElement.value.trim();
+                    let validCheck = this.checkBoxValidation(checboxElement);
+                    let answerReady = this.inputValidation(answerVal);
+                    //set answer data
+                    let answer = {
                         answer: answerReady,
                         validStatus: validCheck
                     };
-                answers.push(answer);
-                checkVal.checked = false;
-                getAnswer.value = '';
+                    this.answers.push(answer);
+                    checboxElement.checked = false;
+                    answerElement.value = '';
+                    return this.answers;
+                }, []);
+            return getAnswers;
+        },
+        saveQuestionData: function(e) {
+            e.preventDefault();
+            //Check first HTML validation
+            let checkHtmlValidation = [...this.answersInputElement]
+                .some((x) => x.checkValidity() === true);
 
-                return answers;
-
-            }, []);
-
-        //all vidations for answers
-        function inputValidation(element) {
-            let answerVal = element,
-                firstLetter = answerVal[0];
-
-            if (answerVal === '') {
-                alert('Empty answer field');
+            if (this.questionInputElement.checkValidity() === false || checkHtmlValidation === false) {
+                return false;
             }
-            if (firstLetter.toLowerCase() === firstLetter) {
-                answerVal = firstLetter.toUpperCase() + answerVal.substring(1);
-            }
-            return answerVal;
-        };
-        //checking checkbox status
-        function checkBoxValidation(element) {
-            let valid = false;
-            if (element.checked) {
-                valid = true;
-            }
-            return valid;
+            //add new question
+            const question = new Question(this.questionData(), this.getAnswersValue());
+            this.questions.push(question);
+            this.questionsCountElement.textContent = this.questions.length;
+            this.questionInputElement.value = '';
+            this.answers = [];
+        },
+        saveCategoryData: function(e) {
+            e.preventDefault();
+            //Save questions to category object
+            const category = {
+                questions: this.questions
+            };
+            const resultsElement = document.getElementById('results');
+            const minifyBoxElement = resultsElement.querySelector('.results__minify');
+            const fullJsonBoxElement = resultsElement.querySelector('.results__json');
+            //append categoryobjcet to Results Section and  stringify it
+            minifyBoxElement.textContent = JSON.stringify(category);
+            fullJsonBoxElement.textContent = JSON.stringify(category, null, 4);
+            //Show results
+            resultsElement.classList.remove('js-hidden');
         }
 
-        //add new question
-        const question = new Question(questionData(), getAnswersValue);
-        questions.push(question);
-        questionsCount.textContent = questions.length;
-        questionDom.value = '';
-        answers = [];
     };
-
-    function saveCategoryData(e) {
-        e.preventDefault();
-        const category = {
-            questions
-        };
-        const minifyBoxDom = document.querySelector('.results__minify'),
-            resultsCont = document.querySelectorAll('.my-container'),
-            fullJson = document.querySelector('.results__json');
-        minifyBoxDom.textContent = JSON.stringify(category);
-        fullJson.textContent = JSON.stringify(category, null, 4);
-
-        for (let result of resultsCont) {
-            if (result.classList.contains('hidden-js')) {
-                result.classList.remove('hidden-js');
-            }
-        }
-    };
+    form.init();
 }());

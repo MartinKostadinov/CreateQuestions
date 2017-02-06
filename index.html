@@ -6,7 +6,7 @@
     <title>Create Questions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/css/main.css">
 </head>
 
@@ -16,58 +16,54 @@
     </header>
     <main class="container">
         <section class="row jumbotron my-container">
-            <article class="col-lg-12 col-md-8 col-sm-8 center-block">
-                <form id="questions" class="form-horizontal clearfix">
-                    <div class="form-group">
-                        <label for="category-name" class="">Category name:</label>
-                        <div class="">
-                            <input type="text" id="category-name" class="form-control form__category-js">
-                        </div>
-                    </div>
+            <article class="col-lg-12 col-md-12 col-sm-12 center-block">
+                <form id="questions-form" class="form-horizontal clearfix">
                     <div class="form-group">
                         <label for="questions" class="">Questions</label>
                         <div class="">
-                            <input type="text" id="questions" class="form-control form__question-js" name="Question" required="required" value="">
+                            <input type="text" id="questions" class="form-control js-form__question" name="Question" required="required" value="">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="form-group col-lg-6 form__answers">
-                            <label for="answer1" class="control-label label__answers col-sm-2 ">Answer 1</label>
-                            <div class="col-sm-8">
-                                <input type="text" id="answer1" class="form-control form__answer" required="required" value="">
-                            </div>
-                            <label for="checkbox1" class="checkbox col-sm-1">
+                    <div id="answers-container">
+                        <div class="form-group">
+                            <div class="form-group col-lg-6 form__answers">
+                                <label for="answer1" class="control-label label__answers col-sm-2 ">Answer 1</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="answer1" class="form-control form__answer" required="required">
+                                </div>
+                                <label for="checkbox1" class="checkbox col-sm-1">
                             <input type="checkbox" id="checkbox1" class="form__checkbox-js" title="Choose correct answer"><span>Correct</span>
                             </label>
-                        </div>
-                        <div class="form-group  col-lg-6 form__answers">
-                            <label for="answer2" class="control-label label__answers col-sm-2">Answer 2</label>
-                            <div class="col-sm-8">
-                                <input type="text" id="answer2" class="form-control form__answer" required="required">
                             </div>
-                            <label for="checkbox2" class="checkbox col-sm-1">
+                            <div class="form-group  col-lg-6 form__answers">
+                                <label for="answer2" class="control-label label__answers col-sm-2">Answer 2</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="answer2" class="form-control form__answer" required="required">
+                                </div>
+                                <label for="checkbox2" class="checkbox col-sm-1">
                             <input type="checkbox" class="form__checkbox-js" id="checkbox2" title="Choose correct answer"><span>Correct</span>
                     </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-group  col-lg-6 form__answers">
-                            <label for="answer3" class="control-label label__answers col-sm-2 ">Answer 3</label>
-                            <div class="col-sm-8">
-                                <input type="text" id="answer3" class="form-control form__answer" required="required">
                             </div>
-                            <label for="checkbox3" class="checkbox col-sm-1">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group  col-lg-6 form__answers">
+                                <label for="answer3" class="control-label label__answers col-sm-2 ">Answer 3</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="answer3" class="form-control form__answer" required="required">
+                                </div>
+                                <label for="checkbox3" class="checkbox col-sm-1">
                             <input type="checkbox" id="checkbox3" class="form__checkbox-js" title="Choose correct answer"><span>Correct</span>
                             </label>
-                        </div>
-                        <div class="form-group  col-lg-6 form__answers">
-                            <label for="answer4" class="control-label label__answers col-sm-2">Answer 4</label>
-                            <div class="col-sm-8">
-                                <input type="text" id="answer4" class="form-control form__answer" required="required">
                             </div>
-                            <label for="checkbox4" class="checkbox col-sm-1">
+                            <div class="form-group  col-lg-6 form__answers">
+                                <label for="answer4" class="control-label label__answers col-sm-2">Answer 4</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="answer4" class="form-control form__answer" required="required">
+                                </div>
+                                <label for="checkbox4" class="checkbox col-sm-1">
                             <input type="checkbox" class="form__checkbox-js" id="checkbox4" title="Choose correct answer"><span>Correct</span>
                     </label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -80,15 +76,13 @@
                 </form>
             </article>
         </section>
-        <section class="row  my-container  hidden-js">
+        <section id="results" class="row  my-container  js-hidden">
             <article class="results__box">
                 <h4 class="text-center">Minified JSON format</h4>
                 <!--<pre class="center-block results">-->
                 <code class=" results__minify results center-block"></code>
                 <!--</pre>-->
             </article>
-        </section>
-        <section class="row  my-container hidden-js">
             <article class="results__box">
                 <h4 class="text-center"> JSON beautified format</h4>
                 <pre class="center-block results">
