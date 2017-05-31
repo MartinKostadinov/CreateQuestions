@@ -123,4 +123,32 @@
 
         });
     }(jQuery));
-
+	"Section comment": {
+		"prefix": "scom",
+		"body": [
+			"/*------------------------------------*\\",
+			"\t #${1:Title}",
+			"\\*------------------------------------*/"
+		]
+	},
+	"Dock-block multi line comment": {
+		"prefix": "multicom",
+		"body": [
+			"/**",
+			"* ${1:comment}",
+			"*",
+			"*1) ${2:comment}",
+			"*2) ${3:comment}",
+			"*",
+			"*/"
+		]
+	},
+	"Item comment": {
+		"prefix": "ecom",
+		"body": [
+			"/**",
+			"* ${1:comment}",
+			"*/"
+		]
+	}
+}
