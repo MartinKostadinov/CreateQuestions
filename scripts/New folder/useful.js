@@ -123,32 +123,62 @@
 
         });
     }(jQuery));
-	"Section comment": {
-		"prefix": "scom",
-		"body": [
-			"/*------------------------------------*\\",
-			"\t #${1:Title}",
-			"\\*------------------------------------*/"
-		]
-	},
-	"Dock-block multi line comment": {
-		"prefix": "multicom",
-		"body": [
-			"/**",
-			"* ${1:comment}",
-			"*",
-			"*1) ${2:comment}",
-			"*2) ${3:comment}",
-			"*",
-			"*/"
-		]
-	},
-	"Item comment": {
-		"prefix": "ecom",
-		"body": [
-			"/**",
-			"* ${1:comment}",
-			"*/"
-		]
-	}
-}
+    $(document).ready(function () {
+        // 'use strict';
+        var
+            $caruselCont = $('#main-gallery'),
+            $mainGallery = $('#carusel'),//ul
+            $slideItems = $mainGallery.children('.slide'),//li
+            slideClass = 'slide',
+            slideActiveClass = 'js-slide-visible',
+            $rightSlideButton = $caruselCont.find('#right-side-button'),
+            $leftSlideButton = $caruselCont.find('#left-side-button'),
+            $bullets = $('.bullets').children('.bullet'),
+            bulletClass = 'bullet',
+            bulletActiveClass = 'active';
+
+        $('#carusel').slick({
+            accessibility: true,
+            dots: true,
+            appendDots: $('.dot-navigation'),
+            appendArrows: $('#main-gallery-container'),
+            asNavFor: $('.description'),
+            prevArrow: $leftSlideButton,
+            nextArrow: $rightSlideButton,
+            autoplay: false,
+            autoplaySpeed: 200,
+            slidesToShow: 1,
+            slidesToScroll: 1
+
+        });
+        $('.description').slick({
+            accessibility: true,
+            asNavFor:$('#carusel'),
+            appendDots: $('.dot-navigation'),
+            appendArrows: $('#main-gallery-container'),
+            slidesToShow: 1,
+            slidesToScroll: 1
+
+        });
+        // vl. mkov
+        // class="slick-prev"  na buttona koito e prev
+        //class="slick-next"  na buttona koito e next
+        //zaduljitelno div parrent div childs bez klasove
+        // dots: true, dobavq dots
+        // appendDots: $('.bullets'), promenq containera na dotsa
+        //.slick-dots li  za customize na dotsa
+        //.slick-active za dobavqne na active class
+        // https://codepen.io/puglyfe/pen/QELpGy
+        //git https://tortoisegit.org/docs/tortoisegit/tgit-preface-source.html
+        //sticky footer https://jsfiddle.net/0cx30dqf/
+        //Iconkite na kontakti s before
+        //footer cont
+        //https://codepen.io/paulfleury/pen/pvvzGx dva slidera
+        //nav-cont - text-align justify
+        //nav
+        //   width: 25%;
+        // display: inline-block;
+        // vertical-align: top;
+        // text-align: left;
+
+    });
