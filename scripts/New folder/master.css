@@ -1,0 +1,98 @@
+/**
+* Grid
+*/
+.row {
+
+}
+.grid {
+    width: 100%;
+}
+.row::before,
+.row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.col {
+    min-height: 1px;
+    padding-right: 20px;
+}
+.col:last-of-type {
+    padding-right: 0;
+}
+.col100 { width: 100%;}
+.col75  {width: 75%;}
+.col50  {width: 50%;}
+.col33  {width: 33.333%;}
+.col25  {width: 25%;}
+.col16  {width: 16.666%}
+/**
+* Align items
+*/
+.pullLeft { float:left;}
+.pullRight {float:right;}
+.alignLeft { text-align: left;}
+.alignRight{text-align: right;}
+.alingnCenter {text-align: center};
+.verticalMiddle { vertical-align: middle};
+/**
+* ClearFix
+*/
+.clearFix:after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    zoom: 1;
+}
+/**
+* Block scroll on modal
+*/
+.js-block-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+/**
+* HIDDEN
+*/
+.js-hidden {
+     position: absolute !important;
+     clip: rect(1px 1px 1px 1px);/*for IE 6,7*/
+     clip: rect(1px, 1px, 1px, 1px);
+     padding: 0 !important;
+     border:  0 !important;
+     height: 1px !important;
+     width:  1px !important;
+     overflow: hidden;
+     white-space: nowrap;    
+}
+/**
+* ALL styles
+*/
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing : border-box;
+    box-sizing: border-box;
+}
+* {
+    margin:0; padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+/**
+* Positioning Block
+*/
+
+.centerBlockH { margin: 0 auto;}
+.centerBlockV { 
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+/**
+* Typography
+*/
+.textLower { text-transform: lowercase;}
+.textUpper { text-transform:  uppercase;}
