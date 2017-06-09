@@ -78,3 +78,112 @@ footer {
         color: white;
     }
 }
+.pop-up__galery__list {
+    font-size: 0;
+    overflow: hidden;
+}
+
+.pop-up__galery__list .slick-current {
+    border: 1px solid #00aeef;
+}
+
+.pop-up__galery__item {
+    padding: 5px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.pop-up__galery__title {
+    margin-top: 29px;
+    font-size: 30px;
+    font-weight: 100;
+    color: #2d4868;
+    text-align: center;
+}
+
+.pop-up__galery {
+    text-align: center;
+    padding: 5px;
+}
+
+.pop-up__house-info {
+    max-width: 450px;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.btn-blue {
+    font-size: 16px;
+    color: #fff;
+    background: #00aeef;
+    padding: 11px 24px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.pop-up__nav {
+    font-size: 13px;
+    padding: 10px;
+    margin-top: 25px;
+    background: #f0f0f0;
+}
+
+.pop-up__btns {
+    background: inherit;
+    border: none;
+    line-height: 22px;
+    cursor: pointer;
+    color: #111;
+    outline: none;
+}
+
+.pop-up__btn-prev {
+    float: left;
+}
+
+.pop-up__btn-close {
+    position: absolute;
+    right: 10px;
+    height: 32px;
+    width: 32px;
+    border: none;
+    background-color: #00aeef;
+    background-image: url(../images/XWhite.png);
+    background-position: 9px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.pop-up__galery__list img {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.pop-up__btn-next {
+    float: right;
+}
+
+.pop-up__btns:after,
+.pop-up__btns:before {
+    content: '';
+    height: 14px;
+    width: 10px;
+    margin: 0 10px;
+    vertical-align: middle;
+    display: inline-block;
+    background: url('../images/sprite.png');
+}
+
+.pop-up__btn-prev:before {
+    background-position: -25px -586px;
+}
+
+.pop-up__btn-next:after {
+    background-position: -44px -586px;
+}
