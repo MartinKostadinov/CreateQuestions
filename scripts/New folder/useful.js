@@ -326,7 +326,6 @@ function initMap() {
 //add script tag which calls the google API
 $(function ($) {
     var script = document.createElement('script');
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBg1B_j8Ll8pPCxki4E7RLIzLQUBKXWKBI&callback=initMap";
     document.body.appendChild(script);
 });
 
