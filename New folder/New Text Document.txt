@@ -1,0 +1,15 @@
+img tag
+vsichko koeto  shte e prez cms, bez klasove,
+tablica kontakti;
+buton span chertichkite
+mega menu  ul-li vmesto divs
+moto kartinkata i teksta zaedno
+
+autoprefixer,
+imagemin,
+sourcemap,
+browsersync,
+minifier, uglifier
+svgmin
+
+npm install --global gulp-cli
