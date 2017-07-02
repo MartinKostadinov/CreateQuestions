@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper {
+        max-width: 1600px;
+        /*padding:0 150px;*/
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .map-cont {
+        height: 0;
+        padding-bottom: 52.25%;
+        position: relative;
+        /*padding: 30%;*/
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    #map {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .map-cont {
+            padding-bottom: 80%;
+        }
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+
+
+        <div class="map-cont">
+            <div id="map">
+            </div>
+        </div>
+    </div>
+    <script src="./jquery-3.1.0.js"></script>
+    <script>
+        var map;
+        var bounds;
+        var geocoder;
+        var lastOpenedWindow = null;
+        var markersArr = [];
+        function initMap() {
+            bounds = new google.maps.LatLngBounds();
+            geocoder = new google.maps.Geocoder();
+            // var firstBound = new google.maps.LatLng(41.2354469, 22.3573446);
+            // var secondBound = new google.maps.LatLng(44.2152333, 28.7292001);
+            // bounds.extend(firstBound);
+            // bounds.extend(secondBound);
+            var bulgaria = { lat: 42.733883, lng: 25.48583 };
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: bulgaria
+            });
+           map.fitBounds(bounds);
+            // Center Map on resize
+           centerMapOnResize();
+            getOfficesInfo();
+        }
+        function centerMapOnResize() {
+            google.maps.event.addDomListener(window, "resize", function () {
+                var center = map.getCenter();
+                google.maps.event.trigger(map, "resize");
+                map.setCenter(center);
+            });
+        }
+
+        //     google.maps.event.addDomListener(map, 'bounds_changed', function (event) {
+        //         if (this.getZoom() <= 8 && $(window).width() > 500 && $(window).width() < 1024) {
+        //             this.setZoom(7);
+        //             console.log('ha');
+        //         } else if (this.getZoom() <= 7 && $(window).width() < 500) {
+        //             console.log('ho');
+        //             this.setZoom(6);
+        //         }
+        //         else if ($(window).width() > 1024) {
+        //             console.log('hp');
+        //             this.setZoom(8);
+        //         }
+        //     });
+        // }
+        // //load the offices list
+        function getOfficesInfo() {
+            $.getJSON('./API/offices.json', function (offices) {
+                console.log(offices);
+
+                //MArker Image
+                var image = {
+                    url: '../images/marker.png',
+                    size: new google.maps.Size(43, 55),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(0, 55)
+                };
+                for (var i = 0; i < offices.length; i++) {
+                    var office = offices[i];
+                    var address = office.address;
+                    var atm = office.atm;
+                    var workHours = office.extendedTime;
+                    appendMakerInfo(office, image, geocoder, map);
+                }
+            });
+
+            function appendMakerInfo(office, image, geocoder, map) {
+                geocoder.geocode({ 'address': office.address }, function (results, status) {
+                    // append  info window
+                    var contentString = createInfoWindow(office);
+
+                    if (status == 'OK') {
+                        var infowindow = new google.maps.InfoWindow({
+                            content: contentString
+                        });
+                        var marker = new google.maps.Marker({
+                            position: results[0].geometry.location,
+                            map: map,
+                            icon: image
+
+                        });
+                        google.maps.event.addListener(map, 'click', function () {
+                            infowindow.close();
+                        });
+                        google.maps.event.addListener(marker, 'click', (function (marker) {
+                            return function () {
+                                
+                                map.panTo(marker.position);
+                                map.setZoom(17);
+                                closeOpenedWindow();
+                                infowindow.open(map, marker);
+                                lastOpenedWindow = infowindow;
+                            };
+                        })(marker));
+
+                        //set markers values
+                        marker.mainMap = map;
+                        marker.name = office.name;
+                        marker.address = office.address;
+                        marker.atm = office.atm;
+                        marker.workHours = office.extendedTime;
+                        marker.setVisible(true);
+
+                        //make  markers array
+                        markersArr.push(marker);
+                        center ();
+                        // if (markersArr.length === 10 ){
+                        //      center ();
+                        // }
+                    } else {
+                        //if the markers hit the limit from Google wait 1 sec, and call
+                        //the function again
+                        if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+
+                            setTimeout(function () {
+                                appendMakerInfo(office, image, geocoder, map)
+                            }, 1000);
+                        }
+                        console.log('Geocode was not succesful' + status);
+                    }
+                });
+               
+            }
+             function  closeOpenedWindow () {
+                if (lastOpenedWindow) {
+                    lastOpenedWindow.close();
+                }
+            }
+            function center () {
+                var bounds = new google.maps.LatLngBounds();
+                for (var i = 0; i < markersArr.length; i++) {
+                    var element = markersArr[i];
+                    console.log(element.getPosition(0))
+                    bounds.extend(element.getPosition());
+                    map.fitBounds(bounds);
+                }
+            }
+            function createInfoWindow(element) {
+                var contentString = '<div id="info__content">' +
+                    '<div id="siteNotice">' +
+                    '</div>' +
+                    '<h3 class="info__name">' + element.name + '</h3>' +
+                    '<span class="info__address">' + element.address + '</span>' +
+                    '</div>';
+                return contentString;
+            }
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg1B_j8Ll8pPCxki4E7RLIzLQUBKXWKBI&callback=initMap">
+
+    </script>
+</body>
+
+</html>

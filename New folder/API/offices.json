@@ -1,0 +1,51 @@
+[{
+    "name": "Офис 1",
+    "address": "Пловдив ",
+    "atm": true,
+    "extendedTime": true
+}, {
+    "name": "Офис 2",
+    "address": "Русе",
+    "atm": false,
+    "extendedTime": true
+}, {
+    "name": "Офис 3",
+    "address": "Смолян",
+    "atm": false,
+    "extendedTime": false
+}, {
+    "name": "Офис 4",
+    "address": "София",
+    "atm": true,
+    "extendedTime": false
+}, {
+    "name": "Офис 5",
+    "address": "Варна",
+    "atm": true,
+    "extendedTime": true
+}, {
+    "name": "Офис 6",
+    "address": "Бургас",
+    "atm": false,
+    "extendedTime": true
+}, {
+    "name": "Офис 7",
+    "address": "Ловеч",
+    "atm": false,
+    "extendedTime": false
+}, {
+    "name": "Офис 8",
+    "address": "Велико Търново",
+    "atm": true,
+    "extendedTime": false
+}, {
+    "name": "Офис 9",
+    "address":  "Перник",
+    "atm": true,
+    "extendedTime": true
+}, {
+    "name": "Офис 10",
+    "address":  "Сопот",
+    "atm": false,
+    "extendedTime": true
+}]
