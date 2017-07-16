@@ -1,0 +1,237 @@
+/**
+* Tags styles
+*/
+
+a:active,
+a:hover {
+    outline: 0;
+}
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+* Grid
+*/
+.row {
+    margin: 0 auto;
+}
+.row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.grid {
+    width: 100%;
+}
+.row::before,
+.row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.col {
+    min-height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    left: auto;
+    right: auto;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+.col:last-of-type {
+    padding-right: 0;
+}
+.row .col100 { width: 100%;}
+.row .col75  {width: 75%;}
+.row .col66  {width: 66.6666666667%}
+.row .col50  {width: 50%;}
+.row .col33  {width: 33.333%;}
+.row .col25  {width: 25%;}
+.row .col16  {width: 16.6666666667%}
+.row .col8 {width: 8.3333333333%}
+
+/*offsets  */
+.row .col .offset-8 {
+    margin-left: 8.3333333333%;
+}
+.row .col .offset-16 {
+    margin-left: 16.6666666667%;
+}
+.row .col .offset-25 {
+    margin-left: 25%;
+}
+.row .col .offset-33 {
+    margin-left: 33.3333333333%
+}
+.row .col .offset-50 {
+    margin-left: 50%;
+}
+.row .col .offset-66 {
+    margin-left: 66.6666666667%;
+}
+.row .col .offset-75 {
+    margin-left: 75%;
+}
+.row .col .offset-100 {
+    margin-left: 100%;
+}
+
+/* pull  */
+.row .col .pull-8 {
+    right: 8.3333333333%;
+}
+.row .col .pull-16 {
+    right: 16.6666666667%;
+}
+.row .col .pull-25 {
+    right: 25%;
+}
+.row .col .pull-33 {
+    right: 33.3333333333%
+}
+.row .col .pull-50 {
+    right: 50%;
+}
+.row .col .pull-66 {
+    right: 66.6666666667%;
+}
+.row .col .pull-75 {
+    right: 75%;
+}
+.row .col .pull-100 {
+    right: 100%;
+}
+/*push  */
+.row .col .push-8 {
+    left: 8.3333333333%;
+}
+.row .col .push-16 {
+    left: 16.6666666667%;
+}
+.row .col .push-25 {
+    left: 25%;
+}
+.row .col .push-33 {
+    left: 33.3333333333%
+}
+.row .col .push-50 {
+    left: 50%;
+}
+.row .col .push-66 {
+    left: 66.6666666667%;
+}
+.row .col .push-75 {
+    left: 75%;
+}
+.row .col .push-100 {
+    left: 100%;
+}
+/**
+* Utility classes
+*/
+.pull-left { float:left;}
+.pull-right {float:right;}
+
+/*align inline elements  */
+.align-left { text-align: left;}
+.align-right{text-align: right;}
+.alingn-center {text-align: center};
+
+.vertical-middle { vertical-align: middle};
+
+.block-center { display: block; margin: 0 auto;}
+
+/*truncate text - '...'  */
+.truncate-text {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ .no-pad {
+     padding: 0;
+ }
+
+/**
+* BTN
+*/
+.btn {
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s ease-out;
+}
+/**
+* ClearFix
+*/
+.clearFix:after {
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    zoom: 1;
+}
+/**
+* Block scroll on modal
+*/
+.js-block-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+/**
+* HIDDEN
+*/
+.js-hidden {
+     position: absolute !important;
+     clip: rect(1px 1px 1px 1px);/*for IE 6,7*/
+     clip: rect(1px, 1px, 1px, 1px);
+     padding: 0 !important;
+     border:  0 !important;
+     height: 1px !important;
+     width:  1px !important;
+     overflow: hidden;
+     white-space: nowrap;    
+}
+/**
+* ALL styles
+*/
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing : border-box;
+    box-sizing: border-box;
+}
+* {
+    margin:0; padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+/**
+* Positioning Block
+*/
+
+.centerBlockH { margin: 0 auto;}
+.centerBlockV { 
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+/**
+* Typography
+*/
+.textLower { text-transform: lowercase;}
+.textUpper { text-transform: uppercase;}
+
+/*Resoponsive img and video  */
+img.resp-img,
+img.resp-video {
+    height: auto;
+    width: 100%;
+}
+/*noUiSlider for input[type="range"]  - https://refreshless.com/nouislider/ */
+/*DatePicker https://github.com/amsul/pickadate.js  */
+/*material shadows  */
