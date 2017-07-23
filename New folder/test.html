@@ -1,0 +1,225 @@
+<style>
+    .floated-text-with-img{
+        max-width: 1296px;
+        font-size: 0;
+    }
+    .floated-text-with-img p,
+    .floated-text-with-img img {
+        display: inline-block;
+        width: 33.33333%;
+        vertical-align: middle;
+        font-size: 18px;
+    }
+    .floated-text-with-img img {
+        margin-left:  33.3333%;
+          /*offset  */
+    }
+</style>
+<!-- <div class="floated-text-with-img">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, voluptatum blanditiis nam perspiciatis deserunt explicabo nobis maiores, quaerat error numquam mollitia. Nesciunt, consectetur minima quos dignissimos ratione eum eos! Necessitatibus.</p>
+    <img src="./images/squad win.png" alt="">
+</div> -->
+<style>
+    .fixed-test{
+        max-width: 1296px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        position: relative;
+    }
+    aside {
+        width: 400px;
+        height: 800px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        border: 1px solid red;
+    }
+    aside li {
+        height: 190px;
+    }
+    main {
+        margin-left: 400px;
+        margin-bottom: 400px;
+    }
+    footer {
+        height: 400px;
+        width: 100%;
+        border: 1px solid blue;
+    }
+</style>
+<!-- <div class="fixed-test">
+<aside>
+    <ul>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+        <li>a</li>
+    </ul>
+</aside>
+<main>
+    <section>
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga recusandae illum aut culpa esse non, ipsa ex aspernatur et, nesciunt quis magni corporis ratione incidunt odio earum at delectus, dolores.</p>
+        </div>
+    </section>
+</main>
+</div>
+<footer>
+    <a href="javascript:;">dsadsdsdsdsa</a>
+</footer> -->
+<style>
+    .test-img {
+        max-width: 1296px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .test-img ul {
+        font-size: 0;
+    }
+    .test-img li {
+        width: 50%;
+        height: 300px;
+        display: inline-block;
+        border: 1px solid red;
+        box-sizing: border-box;
+        margin-top: 30px;
+    }
+    .test-img li:nth-child(even){
+        margin-top: -30px;
+        border: 1px solid blue;
+        position: relative;
+        top:50px;
+    }
+</style>
+<!-- <div class="test-img">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div> -->
+<style>
+ .test-slick{
+    max-width: 400px;
+    height: 200px;
+    margin: 0 auto;
+     border: 1px solid red;
+     
+    color: greenyellow;
+    }
+.test-slick>.wtf{
+    
+    width: 300px;
+   
+}
+.test-slick .slick-prev.slick-disabled{
+    background: red;
+    color: pink;
+}
+.test-slick .slick-next.slick-disabled{
+    background: red;
+    color: pink;
+}
+</style>
+<link rel="stylesheet" href="./slick.css">
+
+<div class="test-slick">
+    <div class="wtf">aaa</div>
+    <div class="wtf">sss</div>
+    <div class="wtf">ddd</div>
+</div>
+<script src="./jquery-3.1.0.js"></script>
+<script src="./slick.min.js"></script>
+<script>
+    $('.test-slick').slick({
+        dots: true,
+        infinite: false,
+    })
+</script>
+
+<!-- https://stackoverflow.com/questions/25434813/simple-pagination-in-javascript -->
+<!-- https://github.com/jlmakes/scrollreveal -->
+<!-- https://stackoverflow.com/questions/9097501/show-div-when-scroll-position -->
+<!-- https://codepen.io/dmcreis/pen/VLLYPo -->
+<!-- https://stackoverflow.com/questions/2540277/jquery-counter-to-count-up-to-a-target-number -->
+<!-- https://stackoverflow.com/questions/33789586/disable-prev-control-on-first-slide-and-disable-next-control-on-last-slide -->
