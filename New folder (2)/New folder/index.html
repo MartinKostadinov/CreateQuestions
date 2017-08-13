@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            font-family: 'Play', sans-serif;
+            font-size: 20px;
+        }
+
+        body {
+            /* only to force vertical scroll on browsers */
+            overflow-y: scroll;
+            padding: 0;
+            margin: 0;
+        }
+
+        #wrap {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        #innerwrap {
+            display: table-row;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        footer,
+        header {
+            display: table-row;
+            height: 1px;
+        }
+
+        #main-header {
+            height: 40px;
+            background-color: red;
+        }
+
+        #footer {
+            height: 320px;
+            background-color: pink;
+        }
+        /*sidebar  */
+
+        .news-left {
+            position: absolute;
+            height: 100%;
+            top: 0;
+        }
+
+        .news-right {
+            position: relative;
+        }
+
+        .wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        header ul li {
+            display: inline-block;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        /*scroll  */
+
+        .news-list::-webkit-scrollbar {
+            width: 30px;
+            height: 30px;
+        }
+
+        .news-list::-webkit-scrollbar-button {
+            width: 100px;
+            height: 30px;
+        }
+
+        .news-list::-webkit-scrollbar-thumb {
+            background: #3bb7c3;
+            border: 10px solid #ffffff;
+            border-radius: 100px;
+        }
+
+        .news-list::-webkit-scrollbar-thumb:hover {
+            background: #3bb7c3;
+        }
+
+        .news-list::-webkit-scrollbar-thumb:active {
+            background: #3bb7c3;
+        }
+
+        .news-list::-webkit-scrollbar-track {
+            background: #eee;
+            border: 14px solid #fff;
+            border-radius: 0px;
+        }
+
+        .news-list::-webkit-scrollbar-track:hover {
+            background: #ffffff;
+        }
+
+        .news-list::-webkit-scrollbar-track:active {
+            background: #333333;
+        }
+
+        .news-list::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+        /*end fo scroll  */
+        /*sidebar  */
+
+        .sidebar {
+            width: 440px;
+            position: fixed;
+            height: 100%;
+            z-index: 1000;
+        }
+
+        .sidebar .news-list {
+            height: 91%;
+            overflow-y: scroll;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #d6d6d6;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .sidebar .news-list>li {
+            padding: 25px 20px;
+            border-right: 1px solid #d6d6d6;
+            border-bottom: 1px solid #d6d6d6;
+        }
+
+        .sidebar .news-list a {
+            text-decoration: none;
+            color: #424242;
+            display: block;
+        }
+
+        .sidebar .news-list time {
+            font-size: 12px;
+        }
+
+        .sidebar .news-list h6 {
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0;
+            margin-bottom: 24px;
+        }
+
+        .sidebar .news-list p {
+            font-size: 16px;
+        }
+
+        .news-left .pagging {
+            background: #fff;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #d6d6d6;
+            border-right: none;
+        }
+
+        .main {
+            width: calc(100% - 440px);
+            display: inline-block;
+            position: relative;
+            left: 440px;
+            border-left: 1px solid #d6d6d6;
+            padding-left: 30px;
+        }
+
+        .all-news {
+            position: relative;
+        }
+        /* Sticky footer ends here
+            -------------------------------------------------- */
+    </style>
+    <!-- wrap -->
+
+    <style>
+        /* .sidebar-fixed {
+            position: fixed;
+            top: 0;
+        }
+
+        .sidebar-bottom {
+            position: absolute;
+            bottom: 0;
+            top: auto;
+            height: 100%;
+        } */
+
+        .sidebar-top {
+            /* position: absolute;
+            top: 0; */
+            /* position: fixed;
+            top: 56px; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div id="main-header">
+                <nav>
+                    <ul>
+                        <li>fsdfsdefad</li>
+                        <li>fsdfsdefad</li>
+                        <li>fsdfsdefad</li>
+                        <li>fsdfsdefad</li>
+                        <li>fsdfsdefad</li>
+                        <li>fsdfsdefad</li>
+                        <li>fsdfsdefad</li>
+                        <li>fsdfsdefad</li>
+                        <li>fsdfsdefad</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="innerwrap">
+            <div style="height:300px;">
+
+            </div>
+            <section class="all-news">
+                <div class="wrapper">
+
+                    <div class="news-right">
+                        <div class="main">
+                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores impedit quas repellendus, pariatur
+                                quod dignissimos enim alias commodi quasi vero quo suscipit accusantium, fuga facilis rem
+                                fugiat perspiciatis, minus voluptate.</div>
+                            <div>Aperiam quia, suscipit assumenda. Minus nisi, veritatis aliquam. Sint aliquid odit deserunt nisi
+                                veritatis saepe, molestiae dignissimos impedit sequi dicta, repellat inventore architecto
+                                ea ab neque est eum facere obcaecati.</div>
+                            <div>Reprehenderit laborum, repudiandae adipisci blanditiis veniam. Optio quae dolores tempore molestias
+                                omnis nostrum, officia minus excepturi, iste eum perferendis atque labore ipsam quo non molestiae
+                                corporis sed sequi voluptate commodi!</div>
+                            <div>Facilis ad officiis ducimus culpa, autem fuga perferendis commodi laborum inventore voluptas
+                                nulla sit veniam molestias error libero laudantium unde iusto rerum quaerat architecto qui
+                                deleniti voluptatem animi. Minima, ut!</div>
+                            <div>Similique maiores, eos aliquid consectetur amet unde labore ducimus illum recusandae temporibus,
+                                cum facere distinctio quod et inventore consequatur aspernatur odio? Eveniet, dolorem! Ratione
+                                possimus, doloremque ex quasi eveniet voluptas.</div>
+                            <div>Enim numquam voluptate atque dolore eveniet commodi ipsum at in animi repellat mollitia maxime,
+                                dicta assumenda neque, eaque ducimus sit hic, ex quibusdam saepe blanditiis libero necessitatibus
+                                minus! Odit, quis?</div>
+                            <div>Eum pariatur, magnam, dignissimos nostrum eveniet ab explicabo aliquam veniam, debitis fugit
+                                placeat aliquid necessitatibus assumenda architecto in ducimus! Id amet perspiciatis harum
+                                commodi in neque nobis at recusandae, saepe.</div>
+                            <div>Amet placeat, necessitatibus quis labore dicta esse adipisci error sequi ullam. Aperiam deleniti
+                                magni sint dolore aliquam fugit, dolor officiis laboriosam neque, distinctio voluptatum vel
+                                ut. Laborum eius, facere eligendi.</div>
+                            <div>Quidem amet placeat dolore fugiat repellendus tempora nesciunt voluptatem a inventore esse voluptatibus
+                                voluptas consequuntur, doloremque sequi nulla et facilis aliquid iste rem accusantium quos
+                                magnam necessitatibus. Tempora, harum, doloremque?</div>
+                            <div>Adipisci, iste, accusamus. Unde consequatur explicabo labore, ab error ducimus eius est minima
+                                consectetur in eveniet debitis, ratione dolorum non, obcaecati voluptates deserunt maxime
+                                veniam animi et quo harum? Neque.</div>
+                            <div>Nam quae eveniet ex nemo accusantium dolorum doloremque. Aliquid commodi illum dolore delectus,
+                                ducimus eveniet mollitia maiores id. Nam sit repudiandae repellat consequuntur tempora, quas!
+                                Perferendis exercitationem culpa quis omnis.</div>
+                            <div>Labore alias consectetur, recusandae, aliquid esse tempore sequi expedita provident, soluta magni
+                                nobis! Assumenda possimus magni, nemo id facere totam dolor nihil, explicabo unde omnis tenetur
+                                optio delectus corporis hic!</div>
+                            <div>Unde voluptatum nostrum, hic placeat in dolorem, voluptate voluptatibus totam autem quos! Aspernatur
+                                fugit alias consectetur, quis laborum doloremque nisi laboriosam voluptate dignissimos sint.
+                                Totam odio aliquid ab consequuntur sunt!</div>
+                            <div>Nam optio suscipit recusandae modi autem minus delectus, aliquid deserunt nihil sunt, natus,
+                                quibusdam. Aliquam, vero. Optio quas, animi laborum ut dicta, expedita error sunt, excepturi
+                                molestias architecto nulla aliquam.</div>
+                            <div>Architecto doloremque reiciendis quibusdam error deserunt quod officia nihil alias fugiat hic
+                                similique odio maiores veritatis obcaecati sapiente animi praesentium perferendis distinctio
+                                exercitationem ullam a illo, rem aperiam facilis quos!</div>
+                            <div>Aliquam voluptas porro tempora unde numquam cum eos nam eius non quos quis laboriosam distinctio,
+                                obcaecati maiores et beatae optio earum commodi repudiandae, facere esse, repellendus modi,
+                                odio. Eligendi, incidunt!</div>
+                            <div>Voluptatibus veritatis, quasi impedit! Eius accusamus expedita facilis quod aperiam dignissimos
+                                ducimus officiis sit! Obcaecati similique deleniti ullam qui maiores quis ab omnis, accusamus
+                                unde, assumenda, consequatur quod delectus eos.</div>
+                            <div>Ducimus assumenda alias minima, qui adipisci in cum consectetur voluptatum distinctio deleniti
+                                commodi voluptas, minus repellat aut, veniam facilis expedita mollitia dicta. Sit enim ex,
+                                quos ipsum! Accusantium, quod, earum.</div>
+                            <div>Voluptates suscipit rem natus odit, saepe, commodi recusandae laudantium ea reprehenderit adipisci
+                                quasi exercitationem beatae dolorem deserunt, aperiam a veniam obcaecati, magnam veritatis
+                                illo. Incidunt est iusto iste reiciendis praesentium.</div>
+                            <div>Deserunt, cumque, sequi? Possimus quae autem laborum assumenda consequuntur quasi, a vel temporibus
+                                nihil dolorum aliquid accusamus mollitia tempora, atque praesentium ducimus. Nam eaque, autem
+                                maxime ab tempore, vero voluptas!</div>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores impedit quas repellendus, pariatur
+                                quod dignissimos enim alias commodi quasi vero quo suscipit accusantium, fuga facilis rem
+                                fugiat perspiciatis, minus voluptate.</div>
+                            <div>Aperiam quia, suscipit assumenda. Minus nisi, veritatis aliquam. Sint aliquid odit deserunt nisi
+                                veritatis saepe, molestiae dignissimos impedit sequi dicta, repellat inventore architecto
+                                ea ab neque est eum facere obcaecati.</div>
+                            <div>Reprehenderit laborum, repudiandae adipisci blanditiis veniam. Optio quae dolores tempore molestias
+                                omnis nostrum, officia minus excepturi, iste eum perferendis atque labore ipsam quo non molestiae
+                                corporis sed sequi voluptate commodi!</div>
+                            <div>Facilis ad officiis ducimus culpa, autem fuga perferendis commodi laborum inventore voluptas
+                                nulla sit veniam molestias error libero laudantium unde iusto rerum quaerat architecto qui
+                                deleniti voluptatem animi. Minima, ut!</div>
+                            <div>Similique maiores, eos aliquid consectetur amet unde labore ducimus illum recusandae temporibus,
+                                cum facere distinctio quod et inventore consequatur aspernatur odio? Eveniet, dolorem! Ratione
+                                possimus, doloremque ex quasi eveniet voluptas.</div>
+                            <div>Enim numquam voluptate atque dolore eveniet commodi ipsum at in animi repellat mollitia maxime,
+                                dicta assumenda neque, eaque ducimus sit hic, ex quibusdam saepe blanditiis libero necessitatibus
+                                minus! Odit, quis?</div>
+                            <div>Eum pariatur, magnam, dignissimos nostrum eveniet ab explicabo aliquam veniam, debitis fugit
+                                placeat aliquid necessitatibus assumenda architecto in ducimus! Id amet perspiciatis harum
+                                commodi in neque nobis at recusandae, saepe.</div>
+                            <div>Amet placeat, necessitatibus quis labore dicta esse adipisci error sequi ullam. Aperiam deleniti
+                                magni sint dolore aliquam fugit, dolor officiis laboriosam neque, distinctio voluptatum vel
+                                ut. Laborum eius, facere eligendi.</div>
+                            <div>Quidem amet placeat dolore fugiat repellendus tempora nesciunt voluptatem a inventore esse voluptatibus
+                                voluptas consequuntur, doloremque sequi nulla et facilis aliquid iste rem accusantium quos
+                                magnam necessitatibus. Tempora, harum, doloremque?</div>
+                            <div>Adipisci, iste, accusamus. Unde consequatur explicabo labore, ab error ducimus eius est minima
+                                consectetur in eveniet debitis, ratione dolorum non, obcaecati voluptates deserunt maxime
+                                veniam animi et quo harum? Neque.</div>
+                            <div>Nam quae eveniet ex nemo accusantium dolorum doloremque. Aliquid commodi illum dolore delectus,
+                                ducimus eveniet mollitia maiores id. Nam sit repudiandae repellat consequuntur tempora, quas!
+                                Perferendis exercitationem culpa quis omnis.</div>
+                            <div>Labore alias consectetur, recusandae, aliquid esse tempore sequi expedita provident, soluta magni
+                                nobis! Assumenda possimus magni, nemo id facere totam dolor nihil, explicabo unde omnis tenetur
+                                optio delectus corporis hic!</div>
+                            <div>Unde voluptatum nostrum, hic placeat in dolorem, voluptate voluptatibus totam autem quos! Aspernatur
+                                fugit alias consectetur, quis laborum doloremque nisi laboriosam voluptate dignissimos sint.
+                                Totam odio aliquid ab consequuntur sunt!</div>
+                            <div>Nam optio suscipit recusandae modi autem minus delectus, aliquid deserunt nihil sunt, natus,
+                                quibusdam. Aliquam, vero. Optio quas, animi laborum ut dicta, expedita error sunt, excepturi
+                                molestias architecto nulla aliquam.</div>
+                            <div>Architecto doloremque reiciendis quibusdam error deserunt quod officia nihil alias fugiat hic
+                                similique odio maiores veritatis obcaecati sapiente animi praesentium perferendis distinctio
+                                exercitationem ullam a illo, rem aperiam facilis quos!</div>
+                            <div>Aliquam voluptas porro tempora unde numquam cum eos nam eius non quos quis laboriosam distinctio,
+                                obcaecati maiores et beatae optio earum commodi repudiandae, facere esse, repellendus modi,
+                                odio. Eligendi, incidunt!</div>
+                            <div>Voluptatibus veritatis, quasi impedit! Eius accusamus expedita facilis quod aperiam dignissimos
+                                ducimus officiis sit! Obcaecati similique deleniti ullam qui maiores quis ab omnis, accusamus
+                                unde, assumenda, consequatur quod delectus eos.</div>
+                            <div>Ducimus assumenda alias minima, qui adipisci in cum consectetur voluptatum distinctio deleniti
+                                commodi voluptas, minus repellat aut, veniam facilis expedita mollitia dicta. Sit enim ex,
+                                quos ipsum! Accusantium, quod, earum.</div>
+                            <div>Voluptates suscipit rem natus odit, saepe, commodi recusandae laudantium ea reprehenderit adipisci
+                                quasi exercitationem beatae dolorem deserunt, aperiam a veniam obcaecati, magnam veritatis
+                                illo. Incidunt est iusto iste reiciendis praesentium.</div>
+                            <div>Deserunt, cumque, sequi? Possimus quae autem laborum assumenda consequuntur quasi, a vel temporibus
+                                nihil dolorum aliquid accusamus mollitia tempora, atque praesentium ducimus. Nam eaque, autem
+                                maxime ab tempore, vero voluptas!</div>
+                            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores impedit quas repellendus, pariatur
+                                quod dignissimos enim alias commodi quasi vero quo suscipit accusantium, fuga facilis rem
+                                fugiat perspiciatis, minus voluptate.</div>
+                            <div>Aperiam quia, suscipit assumenda. Minus nisi, veritatis aliquam. Sint aliquid odit deserunt nisi
+                                veritatis saepe, molestiae dignissimos impedit sequi dicta, repellat inventore architecto
+                                ea ab neque est eum facere obcaecati.</div>
+                            <div>Reprehenderit laborum, repudiandae adipisci blanditiis veniam. Optio quae dolores tempore molestias
+                                omnis nostrum, officia minus excepturi, iste eum perferendis atque labore ipsam quo non molestiae
+                                corporis sed sequi voluptate commodi!</div>
+                            <div>Facilis ad officiis ducimus culpa, autem fuga perferendis commodi laborum inventore voluptas
+                                nulla sit veniam molestias error libero laudantium unde iusto rerum quaerat architecto qui
+                                deleniti voluptatem animi. Minima, ut!</div>
+                            <div>Similique maiores, eos aliquid consectetur amet unde labore ducimus illum recusandae temporibus,
+                                cum facere distinctio quod et inventore consequatur aspernatur odio? Eveniet, dolorem! Ratione
+                                possimus, doloremque ex quasi eveniet voluptas.</div>
+                            <div>Enim numquam voluptate atque dolore eveniet commodi ipsum at in animi repellat mollitia maxime,
+                                dicta assumenda neque, eaque ducimus sit hic, ex quibusdam saepe blanditiis libero necessitatibus
+                                minus! Odit, quis?</div>
+                            <div>Eum pariatur, magnam, dignissimos nostrum eveniet ab explicabo aliquam veniam, debitis fugit
+                                placeat aliquid necessitatibus assumenda architecto in ducimus! Id amet perspiciatis harum
+                                commodi in neque nobis at recusandae, saepe.</div>
+                            <div>Amet placeat, necessitatibus quis labore dicta esse adipisci error sequi ullam. Aperiam deleniti
+                                magni sint dolore aliquam fugit, dolor officiis laboriosam neque, distinctio voluptatum vel
+                                ut. Laborum eius, facere eligendi.</div>
+                            <div>Quidem amet placeat dolore fugiat repellendus tempora nesciunt voluptatem a inventore esse voluptatibus
+                                voluptas consequuntur, doloremque sequi nulla et facilis aliquid iste rem accusantium quos
+                                magnam necessitatibus. Tempora, harum, doloremque?</div>
+                            <div>Adipisci, iste, accusamus. Unde consequatur explicabo labore, ab error ducimus eius est minima
+                                consectetur in eveniet debitis, ratione dolorum non, obcaecati voluptates deserunt maxime
+                                veniam animi et quo harum? Neque.</div>
+                            <div>Nam quae eveniet ex nemo accusantium dolorum doloremque. Aliquid commodi illum dolore delectus,
+                                ducimus eveniet mollitia maiores id. Nam sit repudiandae repellat consequuntur tempora, quas!
+                                Perferendis exercitationem culpa quis omnis.</div>
+                            <div>Labore alias consectetur, recusandae, aliquid esse tempore sequi expedita provident, soluta magni
+                                nobis! Assumenda possimus magni, nemo id facere totam dolor nihil, explicabo unde omnis tenetur
+                                optio delectus corporis hic!</div>
+                            <div>Unde voluptatum nostrum, hic placeat in dolorem, voluptate voluptatibus totam autem quos! Aspernatur
+                                fugit alias consectetur, quis laborum doloremque nisi laboriosam voluptate dignissimos sint.
+                                Totam odio aliquid ab consequuntur sunt!</div>
+                            <div>Nam optio suscipit recusandae modi autem minus delectus, aliquid deserunt nihil sunt, natus,
+                                quibusdam. Aliquam, vero. Optio quas, animi laborum ut dicta, expedita error sunt, excepturi
+                                molestias architecto nulla aliquam.</div>
+                            <div>Architecto doloremque reiciendis quibusdam error deserunt quod officia nihil alias fugiat hic
+                                similique odio maiores veritatis obcaecati sapiente animi praesentium perferendis distinctio
+                                exercitationem ullam a illo, rem aperiam facilis quos!</div>
+                            <div>Aliquam voluptas porro tempora unde numquam cum eos nam eius non quos quis laboriosam distinctio,
+                                obcaecati maiores et beatae optio earum commodi repudiandae, facere esse, repellendus modi,
+                                odio. Eligendi, incidunt!</div>
+                            <div>Voluptatibus veritatis, quasi impedit! Eius accusamus expedita facilis quod aperiam dignissimos
+                                ducimus officiis sit! Obcaecati similique deleniti ullam qui maiores quis ab omnis, accusamus
+                                unde, assumenda, consequatur quod delectus eos.</div>
+                            <div>Ducimus assumenda alias minima, qui adipisci in cum consectetur voluptatum distinctio deleniti
+                                commodi voluptas, minus repellat aut, veniam facilis expedita mollitia dicta. Sit enim ex,
+                                quos ipsum! Accusantium, quod, earum.</div>
+                            <div>Voluptates suscipit rem natus odit, saepe, commodi recusandae laudantium ea reprehenderit adipisci
+                                quasi exercitationem beatae dolorem deserunt, aperiam a veniam obcaecati, magnam veritatis
+                                illo. Incidunt est iusto iste reiciendis praesentium.</div>
+                        </div>
+                    </div>
+                    <div id="left" class="news-left">
+                        <div class="sidebar">
+                            <ul class="news-list">
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="">
+                                        <time>22.10.2016</time>
+                                        <h6>Typographers of yore didn't come up with</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt eveniet accusamus
+                                            vero aliquid
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pagging">
+                                <a href="" title="">Load more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- innerwrap -->
+
+        <footer>
+            <div id="footer">
+
+            </div>
+        </footer>
+        <!-- footer -->
+
+    </div>
+    <script src="./jquery-3.1.0.js"></script>
+    <script>
+        // var length = $('.news-left').height() - $('.sidebar').height() + $('.news-left').offset().top;
+        var right = $('.news-right').offset().top - $('.sidebar').height() + $('.news-right').height();
+        var scrollPosition = null;
+        var heightViewport = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        var $window = $(window).height();
+        console.log($window);
+        $('.news-left').height($window);
+        $(window).scroll(function () {
+
+            var scroll = $(this).scrollTop();
+
+            // var height = $('.sidebar').height() + 'px';
+            if (scroll < $('.news-right').offset().top) {
+                $('.sidebar').css({
+                    // 'position': 'absolute',
+                    // 'top': scroll + 'px'
+                    'position': 'absolute',
+                    'top': '0'
+                });
+
+            }
+            else if (scroll > right) {
+                // console.log(scrollPosition)
+                $('.sidebar').css({
+                    // 'position': 'absolute',
+                    // 'top': $('.news-right').height() + 'px',
+
+                    'position': 'absolute',
+                    'bottom': '0',
+                    'top': right - ($('.news-right').offset().top)
+                });
+                console.log(scrollPosition, right)
+
+            }
+            else {
+                $('.sidebar').css({
+                    'position': 'fixed',
+                    'top': '0'
+                    // 'position': 'fixed',
+                    // 'top': '0'
+                });
+                $('.news-left').height($window);
+                scrollPosition = scroll;
+            }
+            // $('.sidebar').addClass('sidebar-top');
+            // $('.sidebar').removeClass('sidebar-fixed');
+            // $('.sidebar').removeClass('sidebar-bottom');
+            // $('.sidebar').css({
+            //     'position': 'absolute',
+            //     // 'bottom': right,
+            //     'top': "auto"
+            // });
+            // console.log(scroll, $('.news-right').offset().top);
+            // } else if (scroll > length) {
+            // $('.sidebar').addClass('sidebar-bottom');
+            // $('.sidebar').removeClass('sidebar-fixed');
+            // $('.sidebar').removeClass('sidebar-top');
+            // $('.sidebar').css({
+            //     'position': 'absolute',
+            //     'bottom': '0',
+            //     'top': 'auto'
+            // });
+
+
+            // } else {
+            // $('.sidebar').addClass('sidebar-fixed');
+            // $('.sidebar').removeClass('sidebar-bottom');
+            // $('.sidebar').removeClass('sidebar-top');
+            // $('.sidebar').css({
+            //     'position': 'fixed',
+            //     'top': '0',
+            //     'height': height
+            // });
+            // $('.sidebar').css({
+            //     'position': 'absolute',
+            //     'top': scroll
+            // });
+        });
+    </script>
+</body>
+
+</html>
