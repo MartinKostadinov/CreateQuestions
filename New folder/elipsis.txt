@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/79960/how-to-truncate-a-string-in-php-to-the-word-closest-to-a-certain-number-of-charac/79986#79986
+https://stackoverflow.com/questions/10751102/cut-a-string-after-n-characters-but-if-its-in-the-middle-of-a-word-cut-the-who
+https://stackoverflow.com/questions/1104306/how-to-get-first-x-chars-from-a-string-without-cutting-off-the-last-word
+https://stackoverflow.com/questions/11434091/add-if-string-is-too-long-php
+http://www.ebrueggeman.com/blog/abbreviate-text-without-cutting-words-in-half
+
+
+https://github.com/tbasse/jquery-truncate
+https://css-tricks.com/line-clampin/
+https://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css/13924997
+http://jsfiddle.net/k5VET/
+http://dotdotdot.frebsite.nl/
+https://stackoverflow.com/questions/3404508/cross-browsers-mult-lines-text-overflow-with-ellipsis-appended-within-a-widthhe
